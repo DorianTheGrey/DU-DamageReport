@@ -12,9 +12,9 @@ Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scri
 
 Installation/Usage below.
 
+![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
-![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors.png)
 
 INSTALLATION:
