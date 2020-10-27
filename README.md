@@ -1,7 +1,7 @@
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
-# Damage Report v1.1 (DU-DamageReport)
+# Damage Report v1.2 (DU-DamageReport)
 
 ### A multi-screen capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
 
@@ -33,7 +33,8 @@
 ### Usage
 
 1. The script simply displays your damage data of your ship onto 1 to X screens, separated by damaged modules as well as broken modules. You can click on the captions of any screen to change the sorting (by damage, by health or by id). If you click on the title ("Damage Report"), you can enter Simulation Mode (see 3.)
-2. Rightclicking on your Programming Board -> Advanced -> Edit LUA parameters allows you to change two values:
+2. Rightclicking on your Programming Board -> Advanced -> Edit LUA parameters allows you to change three values:
+* If you enable UseMyElementNames the display on the screens will not label damaged/broken elements by their type but by the name you gave them (truncated to 25 characters).
 * You can change the update interval in which the damage data of your ship will be scanned and processed. By default, this is 1 second. Please note that your screens will only refresh if your data changed.
 * You can check "SimulationMode" to start the Programming Board in Simulation Mode by default (see 3.)
 3. The script can either display the current damage data of your ship, or it can simulate random damage to your elements, should you want to test the views. No, your elements won't take any harm in the process. :)
@@ -45,7 +46,6 @@ Currently the following additions are on the roadmap (unordered list):
 1. Add scraps display needed to repair it all
 2. Tracking of damaged/broken elements in 3D space to easier find them
 3. Pop-out functionality to have display in the HUD instead while repairing 
-4. Details view when clicking on damanged/broken element on screen
-5. Have a dedicated view on the screens if everything is healthy ("All systems nominal.")
+4. Have a dedicated view on the screens if everything is healthy ("All systems nominal.")
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
