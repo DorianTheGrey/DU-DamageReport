@@ -10,7 +10,10 @@ Discord: Dorian Gray#2623
 InGame: DorianGray
 GitHub: https://github.com/DorianTheGrey/DU-DamageReport
 
+![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
+![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
+![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors.png)
 
 
 GNU Public License 3.0. Use whatever you want, be so kind to leave credit.
