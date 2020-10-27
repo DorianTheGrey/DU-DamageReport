@@ -20,7 +20,7 @@
 ![All systems nominal](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/AllSystemsNominal.png)
 ![Change Sorting](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
 ![Simulation Mode](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
-![Up to 9 monitors (https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors2.png)
+![Up to 9 monitors](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
 
 
 ### Installation
