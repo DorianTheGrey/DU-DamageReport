@@ -8,7 +8,7 @@ Created By Dorian Gray
 
 Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport
 
-Thanks to Jericho, Dmentia and Archaegeo for learning from their fine script.
+Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.
 
 Installation/Usage below.
 
