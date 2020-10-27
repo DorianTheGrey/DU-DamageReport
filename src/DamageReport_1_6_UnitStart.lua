@@ -510,7 +510,7 @@ function GenerateHUDOutput()
                   .fmmiddle { font-size: 25px; text-anchor: middle; fill: white;}
                   .fmmiddlehud1 { text-anchor: middle; fill: black; font: bold 20px}
                   .fhudM1 { font: bold 18px tahoma; fill: black; text-anchor: middle}
-                  .fhudM2 { font: bold 30px tahoma; fill: white; text-anchor: middle}
+                  .fhudM2 { font: bold 25px tahoma; fill: #1e1e1e; text-anchor: middle}
                   .fmmiddleb { font-size: 30px; text-anchor: middle; fill: black;}
                   .fmmiddler { font-size: 30px; text-anchor: middle; fill: red;}
                   .fmend { font-size: 25px; text-anchor: end; fill: white;}
@@ -519,7 +519,7 @@ function GenerateHUDOutput()
     hudOutput = hudOutput..
             [[
                 <rect x="0" y="0" rx="10" ry="10" width="]]..hudWidth..[[" height="]]..hudHeight..[[" style="fill: #1e1e1e;opacity: 0.5;"/>
-                <text x="]]..math.ceil(hudWidth/2)..[[" y="38" class="fhudM2">DAMAGE REPORT</text>
+                <text x="]]..math.ceil(hudWidth/2)..[[" y="38" class="fhudM2">DAMAGE REPORT HUD</text>
             ]]
 
     hudOutput = hudOutput..
@@ -790,7 +790,8 @@ function DrawScreens()
                         [[<svg x="810" y="410">]]..
                         GetAllSystemsNominalBackground()..
                         [[</svg>]]..
-                        [[<text x="960" y="750" class="ftopmiddle" fill="#00aa00">]]..OkayCenterMessage..[[</text>]]
+                        [[<text x="960" y="750" class="ftopmiddle" fill="#00aa00">]]..OkayCenterMessage..[[</text>]] ..
+                        [[<text x="960" y="800" class="ftopmiddle" fill="#00aa00">Ship stands ]]..GenerateCommaValue(string.format("%.0f", totalShipMaxHP))..[[ HP strong.</text>]]
         end
 
         -- Draw HUD Mode button
