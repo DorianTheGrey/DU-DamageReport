@@ -2,7 +2,7 @@
 
 DamageReport v1.0
 
-A multi-screen, touch enabled, easy to isntall ship damage reporting script for Dual Universe. Find that one damaged element faster. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run.
+A multi-screen capable, touch enabled, easy to install ship damage reporting script for Dual Universe. Find that one damaged element faster. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run.
 
 Created By Dorian Gray
 
