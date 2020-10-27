@@ -1,18 +1,18 @@
 # DU-DamageReport
 
-[b]DamageReport v1.1
+**DamageReport v1.1
 
-A multi-screen capable, touch enabled, easy to install ship damage reporting script for Dual Universe.
+**A multi-screen capable, touch enabled, easy to install ship damage reporting script for Dual Universe.**
 
-Find that one damaged element faster. Have an eye of the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run.[/b]
+**Find that one damaged element faster. Have an eye of the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run.**
 
-Created By Dorian Gray
+*Created By Dorian Gray*
 
-Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport
+*Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport*
 
-Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.
+*Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.*
 
-Installation/Usage below.
+**Installation/Usage below.**
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
 ![Cockpit](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/InstalledToShip.png)
