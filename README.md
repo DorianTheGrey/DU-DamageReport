@@ -6,9 +6,7 @@ A multi-screen ship damage reporting script for Dual Universe
 
 Created By Dorian Gray
 
-Discord: Dorian Gray#2623
-InGame: DorianGray
-GitHub: https://github.com/DorianTheGrey/DU-DamageReport
+Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
