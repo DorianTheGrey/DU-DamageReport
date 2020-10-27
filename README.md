@@ -28,7 +28,7 @@
 1. Place a Progamming Board on your ship as well as one (or two, or three, ...) monitors you want the Damage Report to be displayed.
 2. Link your ships core to the Programming Board (you do not need to rename any slots).
 3. Link all monitors to the board you want to use with Damage Report (you do not need to rename any slots).
-4. Copy the latest JSON file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_X.json". Click on the file, click on "Raw", copy everthing.
+4. Copy the latest JSON file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_X.json". Click on the file, click on "Raw", copy everything.
 5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard
 6. Activate Programming Board.
 
@@ -48,7 +48,6 @@ Currently the following additions are on the roadmap (unordered list):
 
 1. Add scraps display needed to repair it all
 2. Tracking of damaged/broken elements in 3D space to easier find them
-3. Pop-out functionality to have display in the HUD instead while repairing 
-4. Have a dedicated view on the screens if everything is healthy ("All systems nominal.")
+3. Pop-out HUD functionality to have a mobile display while repairing 
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
