@@ -2,13 +2,13 @@
 
 DamageReport v1.0
 
-A multi-screen ship damage reporting script for Dual Universe
+A multi-screen capable, touch enabled, easy to install ship damage reporting script for Dual Universe. Find that one damaged element faster. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run.
 
 Created By Dorian Gray
 
 Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport
 
-Thanks to Jericho, Dmentia and Archaegeo for learning from their fine script.
+Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.
 
 Installation/Usage below.
 
@@ -20,8 +20,8 @@ Installation/Usage below.
 INSTALLATION:
 
 1. Place a Progamming Board on your ship as well as one (or two, or three, ...) monitors you want the Damage Report to be displayed.
-2. Link your ships core to the Programming Board
-3. Link all monitors to the board you want to use with Damage Report
+2. Link your ships core to the Programming Board (you do not need to rename any slots).
+3. Link all monitors to the board you want to use with Damage Report (you do not need to rename any slots).
 4. Copy the latest JSON file of https://github.com/DorianTheGrey/DU-DamageReport
 5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard
 6. Activate Programming Board.
