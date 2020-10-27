@@ -26,7 +26,7 @@
 1. Place a Progamming Board on your ship as well as one (or two, or three, ...) monitors you want the Damage Report to be displayed.
 2. Link your ships core to the Programming Board (you do not need to rename any slots).
 3. Link all monitors to the board you want to use with Damage Report (you do not need to rename any slots).
-4. Copy the latest JSON file of https://github.com/DorianTheGrey/DU-DamageReport
+4. Copy the latest JSON file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_X.json". Click on the file, click on "Raw", copy everthing.
 5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard
 6. Activate Programming Board.
 
