@@ -8,15 +8,14 @@ Created By Dorian Gray
 
 Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport
 
+Thanks to Jericho, Dmentia and Archaegeo for learning from their fine script.
+
+Installation/Usage below.
+
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors.png)
-
-
-GNU Public License 3.0. Use whatever you want, be so kind to leave credit.
-
-Thanks to Jericho, Dmentia and Archaegeo for learning from their fine scripts.
 
 INSTALLATION:
 
@@ -34,3 +33,5 @@ USAGE:
 - You can change the update interval in which the damage data of your ship will be scanned and processed. By default, this is 1 second. Please note that your screens will only refresh if your data changed.
 - You can check "SimulationMode" to start the Programming Board in Simulation Mode by default (see 3.)
 3. The script can either display the current damage data of your ship, or it can simulate random damage to your elements, should you want to test the views. No, your elements won't take any harm in the process. :)
+
+GNU Public License 3.0. Use whatever you want, be so kind to leave credit.
