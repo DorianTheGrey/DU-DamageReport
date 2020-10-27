@@ -1,6 +1,6 @@
 # DU-DamageReport
 
-DamageReport v1.0
+DamageReport v1.1
 
 A multi-screen capable, touch enabled, easy to install ship damage reporting script for Dual Universe. Find that one damaged element faster. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run.
 
@@ -13,9 +13,10 @@ Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scri
 Installation/Usage below.
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
-![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
-![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
-![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors.png)
+![Cockpit](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/InstalledToShip.png)
+![Change Sorting](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
+![Simulation Mode](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
+![Up to 9 monitors](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors.png)
 
 INSTALLATION:
 
