@@ -12,7 +12,7 @@
 
 *Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.*
 
-**Installation/Usage below.**
+**Installation and usage description as well as the roadmap are below the images.**
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
 ![Cockpit](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/InstalledToShip.png)
@@ -36,5 +36,15 @@
 * You can change the update interval in which the damage data of your ship will be scanned and processed. By default, this is 1 second. Please note that your screens will only refresh if your data changed.
 * You can check "SimulationMode" to start the Programming Board in Simulation Mode by default (see 3.)
 3. The script can either display the current damage data of your ship, or it can simulate random damage to your elements, should you want to test the views. No, your elements won't take any harm in the process. :)
+
+### Roadmap
+
+Currently the following additions are on the roadmap (unordered list):
+
+1. Add scraps display needed to repair it all
+2. Tracking of damaged/broken elements in 3D space to easier find them
+3. Pop-out functionality to have display in the HUD instead while repairing 
+4. Details view when clicking on damanged/broken element on screen
+5. Have a dedicated view on the screens if everything is healthy ("All systems nominal.")
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
