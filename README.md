@@ -1,4 +1,5 @@
 
+![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
 # Damage Report v1.1 (DU-DamageReport)
 
