@@ -696,11 +696,11 @@ function DrawScreens()
             screenOutput = screenOutput..
                          [[<text x="960" y="1070" class="ftopmiddle" fill="white">]]..GenerateCommaValue(string.format("%.0f", totalShipMaxHP-totalShipHP))..[[ HP damage in total</text>]]
         else
-            screenOutput = screenOutput..
-                        [[<svg x="810" y="410">]]..
-                        GetAllSystemsNominalBackground()..
-                        [[</svg>]]..
-                        [[<text x="960" y="750" class="ftopmiddle" fill="#00aa00">]]..OkayCenterMessage..[[</text>]]
+            screenOutput = screenOutput ..
+                        [[<svg x="810" y="410">]] ..
+                        GetAllSystemsNominalBackground() ..
+                        [[</svg>]] ..
+                        [[<text x="960" y="750" class="ftopmiddle" fill="#00aa00">]]..OkayCenterMessage..[[</text>]] ..
                         [[<text x="960" y="800" class="ftopmiddle" fill="#00aa00">Ship stands ]]..GenerateCommaValue(string.format("%.0f", totalShipMaxHP))..[[ HP strong.</text>]]
         end
 

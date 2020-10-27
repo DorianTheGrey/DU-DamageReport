@@ -1,5 +1,5 @@
 --[[
-    DamageReport v1.52
+    DamageReport v1.6
 
     Created By Dorian Gray
 
@@ -21,8 +21,8 @@ UpdateInterval = 1 --export: Interval in seconds between updates of the calculat
 SimulationMode = false --export Randomize simluated damage on elements to check out the functionality of this script. And, no, your elements won't be harmed in the process :) You need to restart the script after changing this value.
 YourShipsName = "Enter here" --export Enter your ship name here if you want it displayed instead of the ship's ID. YOU NEED TO LEAVE THE QUOTATION MARKS.
 
-DebugMode = false -- Activate if you want some console messages
-VersionNumber = 1.52 -- Version number
+DebugMode = true -- Activate if you want some console messages
+VersionNumber = 1.6 -- Version number
 
 core = nil 
 screens = {}
@@ -157,7 +157,7 @@ function DisableClickArea(candidate)
         end
     end
 end
-
+-- x="1397" y="133" rx="10" ry="10" width="443" height="60" 
 function InitiateClickAreas()
     clickAreas = {}
     AddClickArea( { id = "DamagedDamage", x1 = 725, x2 = 870, y1 = 380, y2 = 415 } )
@@ -168,7 +168,7 @@ function InitiateClickAreas()
     AddClickArea( { id = "ToggleSimulation", x1 = 65, x2 = 660, y1 = 100, y2 = 145 } )
     AddClickArea( { id = "ToggleElementLabel", x1 = 225, x2 = 460, y1 = 380, y2 = 415 } )
     AddClickArea( { id = "ToggleElementLabel2", x1 = 1185, x2 = 1440, y1 = 380, y2 = 415 } )
-    AddClickArea( { id = "ToggleHudMode", x1 = -1, x2 = -1, y1 = -1, y2 = -1 } )
+    AddClickArea( { id = "ToggleHudMode", x1 = 1397, x2 = 1840, y1 = 133, y2 = 220 } )
     AddClickArea( { id = "DamagedPageDown", x1 = -1, x2 = -1, y1 = -1, y2 = -1 } )
     AddClickArea( { id = "DamagedPageUp", x1 = -1, x2 = -1, y1 = -1, y2 = -1 } )
     AddClickArea( { id = "BrokenPageDown", x1 = -1, x2 = -1, y1 = -1, y2 = -1 } )
@@ -229,6 +229,16 @@ function CheckClick(x, y)
         CurrentBrokenPage = CurrentBrokenPage - 1
         if CurrentBrokenPage < 1 then CurrentBrokenPage = 1 end
         DrawScreens()
+    elseif HitTarget=="ToggleHudMode" then
+        if HUDMode == true then
+            HUDMode = false
+            forceRedraw = true
+            DrawScreens()
+        else
+            HUDMode = true
+            SimulationActive = false
+            DrawScreens()
+    end
     elseif HitTarget=="ToggleSimulation" then
         CurrentDamagedPage=1
         CurrentBrokenPage=1
@@ -453,6 +463,81 @@ function GetAllSystemsNominalBackground()
   return output
 end
 
+function GenerateHUDOutput()
+
+    local hudWidth = 300
+    local hudHeight = 900
+    local screenHeight = 1080
+
+    local healthyColor = "#00aa00"
+    local brokenColor = "#aa0000"
+    local damagedColor = "#aaaa00"
+    local integrityColor = "#aaaaaa"
+    local healthyTextColor = "white"
+    local brokenTextColor = "#ff4444"
+    local damagedTextColor = "#ffff44"
+    local integrityTextColor = "white"
+
+    if #damagedElements ==0 then
+        damagedColor = "#aaaaaa"
+        damagedTextColor = "white"
+    end
+    if #brokenElements == 0 then 
+        brokenColor = "#aaaaaa"
+        brokenTextColor = "white"
+    end
+    
+    local hudOutput = ""
+
+    -- Draw Header
+    hudOutput = hudOutput..
+        [[<svg style="position:absolute;top:]]..(math.ceil(screenHeight/2-hudHeight/2))..[[;left:0;" class="bootstrap" viewBox="0 0 ]]..hudWidth..[[ ]]..hudHeight..[[" width="]]..hudWidth..[[" height="]]..hudHeight..[[">
+            <defs><style>
+                  .ftitle { font-size: 60px; text-anchor: start;fill: white; }
+                  .ftitlew { font-size: 60px; text-anchor: start;fill: red; }
+                  .ftitle2 { font-size: 60px; text-anchor: start;fill: #565656; }
+                  .ftopmiddle { font-size: 40px; text-anchor: middle;}
+                  .ftopend { font-size: 40px; text-anchor: end;}
+                  .fcapstart { font-size: 30px; text-anchor: start; fill: white;}
+                  .fcapstarthy { font-size: 30px; text-anchor: start; fill: yellow;}
+                  .fcapstarthr { font-size: 30px; text-anchor: start; fill: red;}
+                  .fcapmiddle { font-size: 30px; text-anchor: middle; fill: white;}
+                  .fcapend { font-size: 30px; text-anchor: end; fill: white;}
+                  .fmstart { font-size: 25px; text-anchor: start; fill: white;}
+                  .fmstartg { font-size: 25px; text-anchor: start; fill: #1e1e1e;}
+                  .fmstarty { font-size: 25px; text-anchor: start; fill: #aaaa00;}
+                  .fmstartr { font-size: 25px; text-anchor: end; fill: #ff0000;}
+                  .fmmiddle { font-size: 25px; text-anchor: middle; fill: white;}
+                  .fmmiddlehud1 { text-anchor: middle; fill: black; font: bold 20px}
+                  .fhudM1 { font: bold 18px tahoma; fill: black; text-anchor: middle}
+                  .fhudM2 { font: bold 30px tahoma; fill: white; text-anchor: middle}
+                  .fmmiddleb { font-size: 30px; text-anchor: middle; fill: black;}
+                  .fmmiddler { font-size: 30px; text-anchor: middle; fill: red;}
+                  .fmend { font-size: 25px; text-anchor: end; fill: white;}
+            </style></defs>]]
+
+    hudOutput = hudOutput..
+            [[
+                <rect x="0" y="0" rx="10" ry="10" width="]]..hudWidth..[[" height="]]..hudHeight..[[" style="fill: #1e1e1e;opacity: 0.5;"/>
+                <text x="]]..math.ceil(hudWidth/2)..[[" y="38" class="fhudM2">DAMAGE REPORT</text>
+            ]]
+
+    hudOutput = hudOutput..
+            [[<svg x="0" y="50">
+                <line x1="0" x2="]]..hudWidth..[[" y1="1" y2="1" style="stroke:white;" />
+                <rect x="10" y="5" rx="5" ry="5" width="]]..(math.ceil(hudWidth/3)-20)..[[" height="20" style="fill: ]]..healthyColor..[[; stroke: white; stroke-width:1;"/>
+                <text x="]]..((math.ceil(hudWidth/3)-20)/2-5)..[[" y="22" class="fhudM1">]]..healthyElements..[[</text>
+                <rect x="110" y="5" rx="5" ry="5" width="]]..(math.ceil(hudWidth/3)-20)..[[" height="20" style="fill: ]]..damagedColor..[[; stroke: white; stroke-width:1;"/>
+                <text x="]]..((math.ceil(hudWidth/3)-20)/2+110-5)..[[" y="22" class="fhudM1">]]..#damagedElements..[[</text>
+                <rect x="210" y="5" rx="5" ry="5" width="]]..(math.ceil(hudWidth/3)-20)..[[" height="20" style="fill: ]]..brokenColor..[[; stroke: white; stroke-width:1;"/>
+                <text x="]]..((math.ceil(hudWidth/3)-20)/2+210-5)..[[" y="22" class="fhudM1">]]..#brokenElements..[[</text>
+            </svg>]]
+
+
+    hudOutput = hudOutput.. [[</svg>]]
+    return hudOutput
+end
+
 function DrawScreens()
     if #screens > 0 then
 
@@ -474,26 +559,31 @@ function DrawScreens()
             brokenTextColor = "white"
         end
         
+        local screenOutput = ""
+
         -- Draw Header
-        screenOutput = [[<svg class="bootstrap" viewBox="0 0 1920 1120" width="1920" height="1120">
-                            <defs><style>
-                                  .ftitle { font-size: 60px; text-anchor: start;fill: white; }
-                                  .ftitlew { font-size: 60px; text-anchor: start;fill: red; }
-                                  .ftitle2 { font-size: 60px; text-anchor: start;fill: #565656; }
-                                  .ftopmiddle { font-size: 40px; text-anchor: middle;}
-                                  .ftopend { font-size: 40px; text-anchor: end;}
-                                  .fcapstart { font-size: 30px; text-anchor: start; fill: white;}
-                                  .fcapstarthy { font-size: 30px; text-anchor: start; fill: yellow;}
-                                  .fcapstarthr { font-size: 30px; text-anchor: start; fill: red;}
-                                  .fcapmiddle { font-size: 30px; text-anchor: middle; fill: white;}
-                                  .fcapend { font-size: 30px; text-anchor: end; fill: white;}
-                                  .fmstart { font-size: 25px; text-anchor: start; fill: white;}
-                                  .fmstartg { font-size: 25px; text-anchor: start; fill: #1e1e1e;}
-                                  .fmstarty { font-size: 25px; text-anchor: start; fill: #aaaa00;}
-                                  .fmstartr { font-size: 25px; text-anchor: end; fill: #ff0000;}
-                                  .fmmiddle { font-size: 25px; text-anchor: middle; fill: white;}
-                                  .fmend { font-size: 25px; text-anchor: end; fill: white;}
-                                </style></defs>]]
+        screenOutput = screenOutput..
+            [[<svg class="bootstrap" viewBox="0 0 1920 1120" width="1920" height="1120">
+                <defs><style>
+                      .ftitle { font-size: 60px; text-anchor: start;fill: white; }
+                      .ftitlew { font-size: 60px; text-anchor: start;fill: red; }
+                      .ftitle2 { font-size: 60px; text-anchor: start;fill: #565656; }
+                      .ftopmiddle { font-size: 40px; text-anchor: middle;}
+                      .ftopend { font-size: 40px; text-anchor: end;}
+                      .fcapstart { font-size: 30px; text-anchor: start; fill: white;}
+                      .fcapstarthy { font-size: 30px; text-anchor: start; fill: yellow;}
+                      .fcapstarthr { font-size: 30px; text-anchor: start; fill: red;}
+                      .fcapmiddle { font-size: 30px; text-anchor: middle; fill: white;}
+                      .fcapend { font-size: 30px; text-anchor: end; fill: white;}
+                      .fmstart { font-size: 25px; text-anchor: start; fill: white;}
+                      .fmstartg { font-size: 25px; text-anchor: start; fill: #1e1e1e;}
+                      .fmstarty { font-size: 25px; text-anchor: start; fill: #aaaa00;}
+                      .fmstartr { font-size: 25px; text-anchor: end; fill: #ff0000;}
+                      .fmmiddle { font-size: 25px; text-anchor: middle; fill: white;}
+                      .fmmiddleb { font-size: 30px; text-anchor: middle; fill: black;}
+                      .fmmiddler { font-size: 30px; text-anchor: middle; fill: red;}
+                      .fmend { font-size: 25px; text-anchor: end; fill: white;}
+                </style></defs>]]
         
         -- Draw main background
         screenOutput = screenOutput..
@@ -693,19 +783,37 @@ function DrawScreens()
 
         -- Draw damage summary
         if #damagedElements>0 or #brokenElements > 0 then
-            screenOutput = screenOutput..
+            screenOutput = screenOutput ..
                          [[<text x="960" y="1070" class="ftopmiddle" fill="white">]]..GenerateCommaValue(string.format("%.0f", totalShipMaxHP-totalShipHP))..[[ HP damage in total</text>]]
         else
-            screenOutput = screenOutput..
+            screenOutput = screenOutput ..
                         [[<svg x="810" y="410">]]..
                         GetAllSystemsNominalBackground()..
                         [[</svg>]]..
                         [[<text x="960" y="750" class="ftopmiddle" fill="#00aa00">]]..OkayCenterMessage..[[</text>]]
-                        [[<text x="960" y="800" class="ftopmiddle" fill="#00aa00">Ship stands ]]..GenerateCommaValue(string.format("%.0f", totalShipMaxHP))..[[ HP strong.</text>]]
         end
 
         -- Draw HUD Mode button
-        screenOutput = screenOutput..[[</svg>]]
+        if HUDMode == true then
+            screenOutput = screenOutput .. 
+                [[<rect x="1397" y="133" rx="10" ry="10" width="443" height="60" style="fill:#ff6666;" />]] ..
+                [[<text x="1618" y="173" class="fmmiddler">HUD Mode activated</text>]]
+            
+        else
+            screenOutput = screenOutput .. 
+                [[<rect x="1397" y="133" rx="10" ry="10" width="443" height="60" style="fill:#666666;" />]] ..
+                [[<text x="1618" y="173" class="fmmiddleb">Activate HUD Mode</text>]]
+        end
+        
+        screenOutput = screenOutput .. [[</svg>]]
+        
+        if HUDMode == true then
+            system.setScreen( GenerateHUDOutput() )
+            system.showScreen(1)
+        else
+            system.showScreen(0)
+        end
+
 
         DrawSVG(screenOutput)
 
