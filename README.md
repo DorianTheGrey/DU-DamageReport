@@ -46,7 +46,7 @@
 
 Currently the following additions are on the roadmap (unordered list):
 
-1. Add scraps display needed to repair it all
+1. Add filters, so it's possible to monitor only specific element categories (flight systems, combat systems, etc.)
 2. Tracking of damaged/broken elements in 3D space to easier find them
 3. Pop-out HUD functionality to have a mobile display while repairing 
 
