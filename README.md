@@ -30,16 +30,17 @@
 1. Place a Progamming Board on your ship as well as one (or two, or three, ...) monitors you want the Damage Report to be displayed.
 2. Link your ships core to the Programming Board (you do not need to rename any slots). **Make sure you link the core first, before you link screens!**
 3. Link all monitors to the board you want to use with Damage Report (you do not need to rename any slots).
-4. Copy the latest JSON file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_X.json". Click on the file, click on "Raw", copy everything.
+4. Copy the latest config file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_X.json". Click on the file, click on "Raw", copy everything.
 5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard
 6. Activate Programming Board.
 
 ### Usage
 
 1. The script simply displays your damage data of your ship onto 1 to X screens, separated by damaged modules as well as broken modules. You can click on the captions of any screen to change the sorting (by damage, by health or by id). If you click on the title ("Damage Report"), you can enter Simulation Mode (see 3.). If you activate HUD mode (click on the screen), you can use the arrow-up and arrow-down keys to highlight elements, so that blinking markers in 3D space help you find it. Arrow-left toggles the HUD Mode, arrow-right deselects the selected element.
-2. Rightclicking on your Programming Board -> Advanced -> Edit LUA parameters allows you to change four values:
+2. Rightclicking on your Programming Board -> Advanced -> Edit LUA parameters allows you to change several values:
 * [Optional] If you enable UseMyElementNames the display on the screens will not label damaged/broken elements by their type but by the name you gave them (truncated to 25 characters). Please note you can also click on the "Element Type" label on any connected screen to switch the mode.
 * [Optional] You can change the update interval in which the damage data of your ship will be scanned and processed. By default, this is 1 second. Please note that your screens will only refresh if your data changed.
+* [Optional] You can change the blinking frequency of a highlighted element.
 * [Optional] You can check "SimulationMode" to start the Programming Board in Simulation Mode by default (see 3.)
 * [Optional] If you enter your shipname into the variable "YourShipName" the display uses this name instead of the ship id at the top. Don't forget the quotation marks, otherwise it will not work (and you will have to reinstall the script).
 3. The script can either display the current damage data of your ship, or it can simulate random damage to your elements, should you want to test the views. No, your elements won't take any harm in the process. :)
