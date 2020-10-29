@@ -3,7 +3,7 @@
 
 # Damage Report v2.1 (DU-DamageReport)
 
-### A multi-screen capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
+### A multi-screen (and HUD) capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
 
 **Find that one damaged element faster. Have an eye on the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run. Highlight damaged or broken elements in 3D space through the HUD Mode to find what you want to repair much faster.**
 
