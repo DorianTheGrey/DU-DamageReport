@@ -49,7 +49,8 @@
 Currently the following additions are on the roadmap (unordered list):
 
 1. Add filters, so it's possible to monitor only specific element categories (flight systems, combat systems, etc.)
-2. Tracking of damaged/broken elements in 3D space to easier find them
-3. Pop-out HUD functionality to have a mobile display while repairing 
+2. Implement 3D to 2D projection, so damaged elements can be seen in the HUD mode as if you were using an ESP
+3. Beef up visuals and offer some visual options
+
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
