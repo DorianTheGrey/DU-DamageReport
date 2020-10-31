@@ -1,6 +1,5 @@
 --[[
-    DamageReport v2.3
-
+    DamageReport v2.31
     Created By Dorian Gray
 
     Discord: Dorian Gray#2623
@@ -22,7 +21,7 @@ SimulationMode = false --export Randomize simluated damage on elements to check 
 YourShipsName = "Enter here" --export Enter your ship name here if you want it displayed instead of the ship's ID. YOU NEED TO LEAVE THE QUOTATION MARKS.
 
 DebugMode = false -- Activate if you want some console messages
-VersionNumber = 2.3 -- Version number
+VersionNumber = 2.31 -- Version number
 
 core = nil
 screens = {}

@@ -1,5 +1,5 @@
 --[[
-    DamageReport v2.3
+    DamageReport v2.4
 
     Created By Dorian Gray
 
@@ -14,15 +14,15 @@
 -----------------------------------------------
 -- CONFIG
 -----------------------------------------------
-UseMyElementNames = true --export: If you active this, the display will not show the element type of damaged/broken elements but the name you gave them (truncated to 25 characters)
-AllowElementHighlighting = true --export: Are you allowing damaged/broken elements to be highlighted in 3D space when selected in the HUD?
-UpdateInterval = 1 --export: Interval in seconds between updates of the calculations and (if anything changed) redrawing to the screen(s). You need to restart the script after changing this value.
-HighlightBlinkingInterval = 0.5 --export: If an element is marked, how fast do you want the arrows to blink?
-SimulationMode = false --export Randomize simluated damage on elements to check out the functionality of this script. And, no, your elements won't be harmed in the process :) You need to restart the script after changing this value.
-YourShipsName = "Enter here" --export Enter your ship name here if you want it displayed instead of the ship's ID. YOU NEED TO LEAVE THE QUOTATION MARKS.
+UseMyElementNames = true -- export: If you active this, the display will not show the element type of damaged/broken elements but the name you gave them (truncated to 25 characters)
+AllowElementHighlighting = true -- export: Are you allowing damaged/broken elements to be highlighted in 3D space when selected in the HUD?
+UpdateInterval = 1 -- export: Interval in seconds between updates of the calculations and (if anything changed) redrawing to the screen(s). You need to restart the script after changing this value.
+HighlightBlinkingInterval = 0.5 -- export: If an element is marked, how fast do you want the arrows to blink?
+SimulationMode = false -- export Randomize simluated damage on elements to check out the functionality of this script. And, no, your elements won't be harmed in the process :) You need to restart the script after changing this value.
+YourShipsName = "Enter here" -- export Enter your ship name here if you want it displayed instead of the ship's ID. YOU NEED TO LEAVE THE QUOTATION MARKS.
 
 DebugMode = false -- Activate if you want some console messages
-VersionNumber = 2.3 -- Version number
+VersionNumber = 2.4 -- Version number
 
 core = nil
 screens = {}
@@ -36,6 +36,7 @@ DamagedSortingMode = 1 -- Define default sorting mode for damaged elements. 1 to
 BrokenSortingMode = 1 -- Define default sorting mode for broken elements. 1 to sort by damage amount, 2 to sort by element id
 
 HUDMode = false -- Is Hud active?
+SettingsMode = false -- Is Settings page active?
 hudSelectedIndex = 0 -- Which element is selected?
 hudSelectedType = 0 -- Is selected element damaged (1) or broken (2)
 hudArrowSticker = {}
@@ -59,6 +60,363 @@ ElementCounter = 0
 healthyElements = 0
 
 OkayCenterMessage = "All systems nominal."
+
+-- Logical categorization of all elements: categories
+elementCategories = {}
+table.insert( elementCategories, { id = "100", name = "Flight Systems" })
+table.insert( elementCategories, { id = "110", name = "Airfoil" })
+table.insert( elementCategories, { id = "120", name = "Brakes" })
+table.insert( elementCategories, { id = "130", name = "Engines" })
+table.insert( elementCategories, { id = "140", name = "High Tech" })
+table.insert( elementCategories, { id = "200", name = "Combat Systems" })
+table.insert( elementCategories, { id = "210", name = "Weapons" })
+table.insert( elementCategories, { id = "220", name = "Radars" })
+table.insert( elementCategories, { id = "300", name = "Electronics" })
+table.insert( elementCategories, { id = "310", name = "Control Units" })
+table.insert( elementCategories, { id = "320", name = "Secondary" })
+table.insert( elementCategories, { id = "330", name = "Life Support" })
+table.insert( elementCategories, { id = "400", name = "Containers" })
+table.insert( elementCategories, { id = "410", name = "Item Containers" })
+table.insert( elementCategories, { id = "420", name = "Ammo Containers" })
+table.insert( elementCategories, { id = "430", name = "Fuel Tanks" })
+table.insert( elementCategories, { id = "500", name = "Decoration" })
+
+table.sort(elementCategories, function(a, b)
+            return a.id > b.id
+        end)
+
+--- Logical categorization of all elements: elements
+elementCategorization = 
+{
+ containerhub = "410",
+ containerxs = "410",
+ containers = "410",
+ containerm = "410",
+ containerl = "410",
+ dispenser = "320",
+ heavydispenser = "320",
+ mediumdispenser = "320",
+ atmosphericfueltankxs = "420",
+ atmosphericfueltanks = "420",
+ atmosphericfueltankm = "420",
+ atmosphericfueltankl = "420",
+ spacefueltanks = "420",
+ spacefueltankm = "420",
+ spacefueltankl = "420",
+ rocketfueltankxs = "420",
+ rocketfueltanks = "420",
+ rocketfueltankm = "420",
+ rocketfueltankl = "420",
+ ammocontainerxs = "430",
+ ammocontainers = "430",
+ ammocontainerm = "430",
+ ammocontainerl = "430",
+ retrorocketbrakes = "120",
+ retrorocketbrakem = "120",
+ retrorocketbrakel = "120",
+ atmosphericairbrakes = "120",
+ atmosphericairbrakem = "120",
+ atmosphericairbrakel = "120",
+ compactaileronxs = "110",
+ compactailerons = "110",
+ compactaileronm = "110",
+ aileronxs = "110",
+ ailerons = "110",
+ aileronm = "110",
+ stabilizerxs = "110",
+ stabilizers = "110",
+ stabilizerm = "110",
+ stabilizerl = "110",
+ wingxs = "110",
+ wings = "110",
+ wingm = "110",
+ wingvariantm = "110",
+ atmosphericenginexs = "130",
+ atmosphericengines = "130",
+ atmosphericenginem = "130",
+ atmosphericenginel = "130",
+ spaceenginexs = "130",
+ spaceengines = "130",
+ spaceenginem = "130",
+ spaceenginel = "130",
+ spaceenginexl = "130",
+ hoverengines = "130",
+ hoverenginem = "130",
+ hoverenginel = "130",
+ flathoverenginel = "130",
+ adjustorxs = "130",
+ adjustors = "130",
+ adjustorm = "130",
+ adjustorl = "130",
+ rocketengines = "130",
+ rocketenginem = "130",
+ rocketenginel = "130",
+ verticalboosterxs = "130",
+ verticalboosters = "130",
+ verticalboosterm = "130",
+ verticalboosterl = "130",
+ elevatorxs = "320",
+ landinggearxs = "320",
+ landinggears = "320",
+ landinggearm = "320",
+ landinggearl = "320",
+ forcefieldxs = "320",
+ forcefields = "320",
+ forcefieldm = "320",
+ forcefieldl = "320",
+ territoryscanner = "320",
+ gyroscope = "320",
+ telemeter = "320",
+ remotecontroller = "310",
+ hovercraftseatcontroller = "310",
+ emergencycontroller = "330",
+ commandseatcontroller = "310",
+ cockpitcontroller = "310",
+ programmingboard = "310",
+ gunnermodules = "310",
+ gunnermodulem = "310",
+ gunnermodulel = "310",
+ antigravitygenerators = "140",
+ antigravitygeneratorm = "140",
+ antigravitygeneratorl = "140",
+ antigravitypulsor = "140",
+ slidingdoors = "500",
+ slidingdoorm = "500",
+ reinforcedslidingdoor = "500",
+ interiordoor = "500",
+ airlock = "500",
+ gatexs = "500",
+ expandedgates = "500",
+ gatem = "500",
+ expandedgatel = "500",
+ gatexl = "500",
+ andoperator = "320",
+ notoperator = "320",
+ oroperator = "320",
+ relay = "320",
+ databank = "320",
+ twocounter = "320",
+ threecounter = "320",
+ fivecounter = "320",
+ sevencounter = "320",
+ tencounter = "320",
+ infraredlaseremitter = "320",
+ laseremitter = "320",
+ delayline = "320",
+ receiverxs = "320",
+ receivers = "320",
+ receiverm = "320",
+ emitterxs = "320",
+ emitters = "320",
+ emitterm = "320",
+ longlightxs = "500",
+ longlights = "500",
+ longlightm = "500",
+ longlightl = "500",
+ squarelightxs = "500",
+ squarelights = "500",
+ squarelightm = "500",
+ squarelightl = "500",
+ verticallightxs = "500",
+ verticallights = "500",
+ verticallightm = "500",
+ verticallightl = "500",
+ headlight = "500",
+ smallatmosphericradarpvps = "220",
+ mediumatmosphericradarpvpm = "220",
+ largeatmosphericradarpvpl = "220",
+ spaceradars = "220",
+ spaceradarm = "220",
+ spaceradarl = "220",
+ screenxs = "320",
+ screens = "320",
+ screenm = "320",
+ screenxl = "320",
+ transparentscreenxs = "320",
+ transparentscreens = "320",
+ transparentscreenm = "320",
+ transparentscreenl = "320",
+ signxs = "500",
+ signs = "500",
+ signm = "500",
+ signl = "500",
+ signverticalxs = "500",
+ signverticalm = "500",
+ signverticall = "500",
+ sensorss = "320",
+ officechair = "500",
+ navigatorchair = "500",
+ encampmentchair = "500",
+ manualswitch = "320",
+ pressuretile = "320",
+ manualbuttonxs = "320",
+ manualbuttons = "320",
+ laserreceiver = "320",
+ infraredlaserreceiver = "320",
+ detectionzonexs = "320",
+ detectionzones = "320",
+ detectionzonem = "320",
+ detectionzonel = "320",
+ keyboardunit = "500",
+ antennas = "500",
+ antennam = "500",
+ antennal = "500",
+ barriercorner = "500",
+ barriers = "500",
+ barrierm = "500",
+ sinkunit = "500",
+ showerunit = "500",
+ urinalunit = "500",
+ toiletunita = "500",
+ toiletunitb = "500",
+ cablemodelas = "500",
+ cablemodelbs = "500",
+ cablemodelcs = "500",
+ cablemodelam = "500",
+ cablemodelbm = "500",
+ cablemodelcm = "500",
+ cornercablemodela = "500",
+ cornercablemodelb = "500",
+ cornercablemodelc = "500",
+ dresser = "500",
+ bench = "500",
+ woodenlowtable = "500",
+ sofa = "500",
+ woodenwardrobe = "500",
+ table = "500",
+ trash = "500",
+ woodensofa = "500",
+ nightstand = "500",
+ wardrobe = "500",
+ woodenchair = "500",
+ hmsajax33artistunknown = "500",
+ parrotossanctuaryartistunknown = "500",
+ eyedollsworkshopartistunknown = "500",
+ woodenarmchair = "500",
+ roundcarpet = "500",
+ squarecarpet = "500",
+ woodendresser = "500",
+ woodentablem = "500",
+ woodentablel = "500",
+ shelfempty = "500",
+ shelfhalffull = "500",
+ shelffull = "500",
+ bed = "500",
+ spaceshipholograms = "500",
+ spaceshiphologramm = "500",
+ spaceshipholograml = "500",
+ planethologram = "500",
+ planetholograml = "500",
+ steelcolumn = "500",
+ steelpanel = "500",
+ hulldecorativeelementa = "500",
+ hulldecorativeelementb = "500",
+ hulldecorativeelementc = "500",
+ pipeam = "500",
+ pipebm = "500",
+ pipecm = "500",
+ pipedm = "500",
+ pipecornerm = "500",
+ pipeconnectorm = "500",
+ plantcasea = "500",
+ plantcaseb = "500",
+ plantcasec = "500",
+ plantcased = "500",
+ plantcasee = "500",
+ suspendedfruitplant = "500",
+ suspendedplanta = "500",
+ suspendedplantb = "500",
+ baggedplanta = "500",
+ baggedplantb = "500",
+ plant = "500",
+ bonsai = "500",
+ eggplantplantcase = "500",
+ saladplantcase = "500",
+ squashplantcase = "500",
+ plantcases = "500",
+ plantcasem = "500",
+ ficusplanta = "500",
+ ficusplantb = "500",
+ foliageplantcasea = "500",
+ foliageplantcaseb = "500",
+ windowxs = "500",
+ windows = "500",
+ windowm = "500",
+ windowl = "500",
+ armoredwindowxs = "500",
+ armoredwindows = "500",
+ armoredwindowm = "500",
+ armoredwindowl = "500",
+ glasspanels = "500",
+ glasspanelm = "500",
+ glasspanell = "500",
+ baywindowxl = "500",
+ verticalwing = "500",
+ wingtips = "500",
+ wingtipm = "500",
+ wingtipl = "500",
+ resurrectionnode = "330",
+ virtualscaffoldingprojector = "320",
+ cannonxs = "210",
+ cannons = "210",
+ cannonm = "210",
+ cannonl = "210",
+ laserxs = "210",
+ lasers = "210",
+ laserm = "210",
+ laserl = "210",
+ missilexs = "210",
+ missiles = "210",
+ missilem = "210",
+ missilel = "210",
+ railgunxs = "210",
+ railguns = "210",
+ railgunm = "210",
+ railgunl = "210",
+ warpdrivel = "140",
+ hatchs = "500",
+ fuelintakexs = "500",
+ freightatmosphericenginexs = "130",
+ safeatmosphericenginexs = "130",
+ maneuveratmosphericenginexs = "130",
+ militaryatmosphericenginexs = "130",
+ freightatmosphericengines = "130",
+ maneuveratmosphericengines = "130",
+ militaryatmosphericengines = "130",
+ safeatmosphericengines = "130",
+ freightatmosphericenginem = "130",
+ maneuveratmosphericenginem = "130",
+ militaryatmosphericenginem = "130",
+ safeatmosphericenginem = "130",
+ freightatmosphericenginel = "130",
+ maneuveratmosphericenginel = "130",
+ militaryatmosphericenginel = "130",
+ safeatmosphericenginel = "130",
+ freightspaceenginexs = "130",
+ maneuverspaceenginexs = "130",
+ militaryspaceenginexs = "130",
+ safespaceenginexs = "130",
+ freightspaceengines = "130",
+ maneuverspaceengines = "130",
+ militaryspaceengines = "130",
+ safespaceengines = "130",
+ freightspaceenginem = "130",
+ maneuverspaceenginem = "130",
+ militaryspaceenginem = "130",
+ safespaceenginem = "130",
+ freightspaceenginel = "130",
+ maneuverspaceenginel = "130",
+ militaryspaceenginel = "130",
+ safespaceenginel = "130",
+ freightspaceenginexl = "130",
+ maneuverspaceenginexl = "130",
+ militaryspaceenginexl = "130",
+ safespaceenginexl = "130",
+ repairunit = "330",
+ surrogatepodstation = "320",
+ surrogatevrstation = "320",
+ transponder = "330"
+}
 
 -----------------------------------------------
 -- FUNCTIONS
@@ -690,7 +1048,7 @@ end
 function GenerateHUDOutput()
 
     local hudWidth = 300
-    local hudHeight = 125
+    local hudHeight = 165
     if #damagedElements > 0 or #brokenElements > 0 then hudHeight = 780 end
     local screenHeight = 1080
 
@@ -725,6 +1083,7 @@ function GenerateHUDOutput()
                   .fhudM2 { font-size: 15px; font-weight:bold; fill: white; text-anchor: middle}
                   .fhudM3 { font-size: 12px; fill: #4e4e4e; text-anchor: start}
                   .fhudM4 { font-size: 18px; fill: #00aa00; text-anchor: middle}
+                  .fhudM5 { font-size: 12px; fill: #4e4e4e; text-anchor: middle}
                   .fmstartsmall { font-size: 15px; font-weight: bold; text-anchor: start; fill:black}
                   .fmstartsmally { font-size: 15px; text-anchor: start; fill:yellow}
                   .fmendsmall { font-size: 15px; font-weight: bold; text-anchor: end; fill: black } 
@@ -763,8 +1122,8 @@ function GenerateHUDOutput()
                         OkayCenterMessage .. [[</text>]] ..
                         [[<text x="150" y="66" class="fhudM4">Ship stands ]] ..
                         GenerateCommaValue(string.format("%.0f", totalShipMaxHP)) ..
-                        [[ HP strong.</text>]]
-
+                        [[ HP strong.</text>]] ..
+                        [[<text x="150" y="106" class="fhudM5">Use left arrow to exit HUD mode.</text>]]
     end
     hudOutput = hudOutput .. [[</svg>]]
 
@@ -938,6 +1297,7 @@ function GenerateHUDOutput()
                         [[<text x="15" y="40" class="fhudM3">Use left arrow to exit HUD mode.</text>]] ..
                         [[</svg>]]
     end
+
 
     hudOutput = hudOutput .. [[</svg>]]
 
@@ -1313,6 +1673,18 @@ function DrawScreens()
                                GenerateCommaValue(
                                    string.format("%.0f", totalShipMaxHP)) ..
                                [[ HP strong.</text>]]
+        end
+
+        -- Draw Settings Mode button
+        if SettingsMode == true then
+            screenOutput = screenOutput ..
+                               [[<rect x="1650" y="0" rx="10" ry="10" width="200" height="40" style="fill:#ff6666;" />]] ..
+                               [[<text x="1750" y="30" class="fmmiddler">Settings</text>]]
+
+        else
+            screenOutput = screenOutput ..
+                               [[<rect x="1650" y="0" rx="10" ry="10" width="200" height="40" style="fill:#666666;" />]] ..
+                               [[<text x="1750" y="30" class="fmmiddleb">Settings</text>]]
         end
 
         -- Draw Sim Mode button
