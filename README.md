@@ -13,7 +13,7 @@
 
 *Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.*
 
-**Installation and usage description as well as the roadmap are below the images.**
+**Installation and usage description as well as the roadmap and known issues are below the images.**
 
 ![Activate HUD Mode Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ActivateHUDMode.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
@@ -52,6 +52,10 @@ Currently the following additions are on the roadmap (unordered list):
 1. Add filters, so it's possible to monitor only specific element categories (flight systems, combat systems, etc.)
 2. Implement 3D to 2D projection, so damaged elements can be seen in the HUD mode as if you were using an ESP
 3. Beef up visuals and offer some visual options
+
+### Known Issues
+
+1. HUD-mode will not work if you didn't activate the script at the Programming Board. If you activate it via a switch, a detection zone or similar, DU prevents the script from accessing the HUD. You need to start the script at the Programming Board if you want to use the HUD.
 
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
