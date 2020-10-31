@@ -36,7 +36,7 @@
 
 ### Usage
 
-1. **Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that have activated a script at either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
+1. **Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
 2. The script simply displays your damage data of your ship onto 1 to X screens, separated by damaged modules as well as broken modules. You can click on the captions of any screen to change the sorting (by damage, by health or by id). If you click on the title ("Damage Report"), you can enter Simulation Mode (see 3.). If you activate HUD mode (click on the screen), you can use the arrow-up and arrow-down keys to highlight elements, so that blinking markers in 3D space help you find it. Arrow-left toggles the HUD Mode, arrow-right deselects the selected element.
 3. Rightclicking on your Programming Board -> Advanced -> Edit LUA parameters allows you to change several values:
 * [Optional] If you enable UseMyElementNames the display on the screens will not label damaged/broken elements by their type but by the name you gave them (truncated to 25 characters). Please note you can also click on the "Element Type" label on any connected screen to switch the mode.
