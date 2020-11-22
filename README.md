@@ -45,6 +45,8 @@ Very soon we will be linking a YouTube video here explaning the installation and
 
 **Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
 
+First you want to rightclick on your programming board -> advanced -> edit lua parameters. Here you can enter the name of your ship. **Do not remove the quotation marks.**
+
 The bottom row shows several modes you can switch the screen into:
 
 1. TIME - Will display the time on this screen as long as the script runs.
