@@ -1455,6 +1455,10 @@ function GetContentFuel(screen)
                 colorChar = "r"
             end
             
+            if tank.percent == nil then tank.percent = 0 end
+            if tank.cvol == nil then tank.cvol = 0 end
+            if tank.name == nil then tank.name = "" end
+
             output = output .. [[
                 <svg x=20 y=]]..(cCounter*100+220)..[[ width=1880 height=100 viewBox="0 0 1880 100">
                     <rect class="fuel]]..colorChar..[[3" x="13.5" y="9.5" width="1853" height="81"/>
