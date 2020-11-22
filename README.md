@@ -14,14 +14,12 @@ Very soon we will be linking a YouTube video here explaning the installation and
 
 *Thanks to NovaQuark for creating the best MMO of the century. Thanks to Jericho, Dmentia and Archaegeo from DU Open Source Initiative for learning a lot about DU LUA from their fine scripts. Thanks to TheBlacklist for his testing and his many wonderful suggestions. SVG patterns by Hero Patterns. DU atlas data from Jayle Break.*
 
-![Activate HUD Mode Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ActivateHUDMode.png)
-![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
-![Cockpit](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/InstalledToShip2.png)
-![HUD Mode](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DamageReportHUD.png)
-![All systems nominal](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/AllSystemsNominal2.png)
-![Change Sorting](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ChangeSorting.png)
-![Simulation Mode](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
-![Up to 9 monitors](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors2.png)
+![1](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/1.png)
+![2](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/2.png)
+![3](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/3.png)
+![4](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/4.png)
+![5](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/5.png)
+![6](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/6.png)
 
 ### Important Note
 
