@@ -7,7 +7,7 @@
 
 **Find that one damaged element faster. Have an eye on the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Know your fuel situation. Highlight damaged or broken elements in 3D space or find them in ship outline views. Customize all colors and background to fit your bridge colors and style.**
 
-**Recommendation: run it with only one screen or two, before optimization will run into script CPU usage problems otherwise.**
+**Recommendation: run it with only one screen or two, because otherwise you will likely run into script CPU usage problems before optimizations are done.**
 
 Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail. For now please see the installation and usage description below the following screenshots, as well as a note about the roadmap and known issues.
 
