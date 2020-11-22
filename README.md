@@ -82,10 +82,8 @@ There's plenty of bullet points on the roadmap, but as of now I am only focusing
 
 1. You will run into script shutdowns due to the CPU usage. Use less screens to have a higher chance of not running into this problem. Optimizations are being worked on, but you can only go so far with the limited processing time we get. If this is too much of a problem for you at the current stage, please use version 2.33 instead (in "versions").
 
-2. The Settings Page is very crowded (and therefore leads to script shutdowns more likely than other pages). Expect a fix for that soon.
+2. More time & date formats are coming soon.
 
-3. More time & date formats are coming soon.
-
-4. Your touchscreen is not working? - First make sure you are not holding a tool in your hand when trying to click (don't laugh, it happened to all of us). If that is not the problem, you most probably linked the elements in a wrong order. As in the installation: 1. Programming Board to Core, 2. Programming Board to Databank, 3. Programming Board to Screen, 4. Paste conf into Programming Board.
+3. Your touchscreen is not working? - First make sure you are not holding a tool in your hand when trying to click (don't laugh, it happened to all of us). If that is not the problem, you most probably linked the elements in a wrong order. As in the installation: 1. Programming Board to Core, 2. Programming Board to Databank, 3. Programming Board to Screen, 4. Paste conf into Programming Board.
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
