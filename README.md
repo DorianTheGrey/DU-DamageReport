@@ -11,7 +11,7 @@
 
 Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail. For now please see the installation and usage description below the following screenshots, as well as a note about the roadmap and known issues.
 
-*Created By Dorian Gray*
+*Created By Dorian Gray, Scion Interstellar*
 
 *Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport*
 
