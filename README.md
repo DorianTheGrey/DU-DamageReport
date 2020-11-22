@@ -77,7 +77,7 @@ There's plenty of bullet points on the roadmap, but as of now I am only focusing
 
 ### Known Issues
 
-1. You will run into script shutdowns due to the CPU usage. Use less screens to have a higher chance of not running into this problem. Optimizations are being worked on, but you can only go so far with the limited processing time we get.
+1. You will run into script shutdowns due to the CPU usage. Use less screens to have a higher chance of not running into this problem. Optimizations are being worked on, but you can only go so far with the limited processing time we get. If this is too much of a problem for you at the current stage, please use version 2.33 instead (in "versions").
 
 2. The Settings Page is very crowded (and therefore leads to script shutdowns more likely than other pages). Expect a fix for that soon.
 
