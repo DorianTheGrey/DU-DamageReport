@@ -36,16 +36,15 @@ Having said all of this, I successfully used the script on a 1100 element L core
 3. Link the Programming Board to your ships core, then link the Programming Board to the databank, then link the Programming Board to your screen. You can link it to more than one screens, but I highly recommend you start with 1-3 screens only as adding more screens will most probably will make you run into script shutdowns due to the CPU limit.
 4. [Optionally] You can run the script without connecting any screens at all, but you will only be able to use the "HUD Mode" and will miss out on most features of the script.
 5. Copy the latest config file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_XX.config". Click on the file, click on "Raw", copy everything.
-5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard.
-6. Activate Programming Board.
+6. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard.
+7. Activate Programming Board.
+8. Rightclick on your programming board -> advanced -> edit lua parameters. Here you can enter the name of your ship. **Do not remove the quotation marks.**
 
 ### Usage
 
 Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail.
 
 **Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
-
-First you want to rightclick on your programming board -> advanced -> edit lua parameters. Here you can enter the name of your ship. **Do not remove the quotation marks.**
 
 The bottom row shows several modes you can switch the screen into:
 
