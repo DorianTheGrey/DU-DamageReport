@@ -12,6 +12,7 @@
 Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail. For now please see the installation and usage description below the following screenshots, as well as a note about the roadmap and known issues.
 
 *Created By Dorian Gray*
+
 *Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport*
 
 *Thanks to NovaQuark for creating the best MMO of the century. Thanks to Jericho, Dmentia and Archaegeo from DU Open Source Initiative for learning a lot about DU LUA from their fine scripts. Thanks to TheBlacklist for his testing and his many wonderful suggestions. SVG patterns by Hero Patterns. DU atlas data from Jayle Break.*
