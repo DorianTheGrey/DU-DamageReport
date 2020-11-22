@@ -1,19 +1,18 @@
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
-# Damage Report v2.33 (DU-DamageReport)
+# Damage Report v3.00 (DU-DamageReport)
 
 ### A multi-screen (and HUD) capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
 
-**Find that one damaged element faster. Have an eye on the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Don't get off your pilot seat to determine whether you need to land and repair immediatelly or have time until you arrived home at your base. Always have an overview during pvp which systems have been hit and have all the data to decide when it's time to run. Highlight damaged or broken elements in 3D space through the HUD Mode to find what you want to repair much faster.**
+**Find that one damaged element faster. Have an eye on the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Know your fuel situation. Highlight damaged or broken elements in 3D space or find them in ship outline views. Customize all colors and background to fit your bridge colors and style.**
+
+Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail. For now please see the installation and usage description below the following screenshots, as well as a note about the roadmap and known issues.
 
 *Created By Dorian Gray*
-
 *Discord: Dorian Gray#2623 - InGame: DorianGray - GitHub: https://github.com/DorianTheGrey/DU-DamageReport*
 
-*Thanks to Jericho, Dmentia and Archaegeo for learning a lot from their fine scripts.*
-
-**Installation and usage description as well as the roadmap and known issues are below the images.**
+*Thanks to NovaQuark for creating the best MMO of the century. Thanks to Jericho, Dmentia and Archaegeo from DU Open Source Initiative for learning a lot about DU LUA from their fine scripts. Thanks to TheBlacklist for his testing and his many wonderful suggestions. SVG patterns by Hero Patterns. DU atlas data from Jayle Break.*
 
 ![Activate HUD Mode Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/ActivateHUDMode.png)
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/StandardView.png)
@@ -24,39 +23,64 @@
 ![Simulation Mode](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/SimulatedView.png)
 ![Up to 9 monitors](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/UpTo9Monitors2.png)
 
+### Important Note
+
+This script is comparably intense in regards to DU CPU resources required. Using many screens, using it on a ship with many (1000+) elements, clicking rapidly on the settings page, and/or having many damaged elements will most likely cause a script shutdown due to the limited CPU time we get. Using less screens and clicking a tiny bit slower during color selection will help. For now, I am not limiting the number of screens you can use (up to 8), but you will see that 1-3 screens works a lot smoother than more. - Finally, all scripts you run in parallel share one CPU limit, so I advise to switch this script off while you are using e.g. a heavy flight hud script. You have been warned. :)
+
+Having said all of this, I successfully used the script on a 1100 element L core ship (on one screen) without problems.
 
 ### Installation
 
-1. Place a Progamming Board on your ship as well as one (or two, or three, ...) monitors you want the Damage Report to be displayed.
-2. Link your ships core to the Programming Board (you do not need to rename any slots). **Make sure you link the core first, before you link screens!**
-3. Link all monitors to the board you want to use with Damage Report (you do not need to rename any slots). **You can choose to not link any monitors at all. The script will switch into a HUD mode with limited functionality, so I only advise that for small ships that don't fit a screen. (Thanks to NeoCrypter for the idea.)**
-4. Copy the latest config file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_X.json". Click on the file, click on "Raw", copy everything.
-5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard
+1. You need a ship (aka a dynamic core), a databank and a screen (or two, three, ...).
+2. Place a Progamming Board and a databank on your ship.
+3. Link the Programming Board to your ships core, then link the Programming Board to the databank, then link the Programming Board to your screen. You can link it to more than one screens, but I highly recommend you start with 1-3 screens only as adding more screens will most probably will make you run into script shutdowns due to the CPU limit.
+4. [Optionally] You can run the script without connecting any screens at all, but you will only be able to use the "HUD Mode" and will miss out on most features of the script.
+5. Copy the latest config file of https://github.com/DorianTheGrey/DU-DamageReport, it's called "DamageReport_X_XX.config". Click on the file, click on "Raw", copy everything.
+5. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard.
 6. Activate Programming Board.
 
 ### Usage
 
-1. **Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
-2. The script simply displays your damage data of your ship onto 1 to X screens, separated by damaged modules as well as broken modules. You can click on the captions of any screen to change the sorting (by damage, by health or by id). If you click on the title ("Damage Report"), you can enter Simulation Mode (see 3.). If you activate HUD mode (click on the screen), you can use the arrow-up and arrow-down keys to highlight elements, so that blinking markers in 3D space help you find it. Arrow-left toggles the HUD Mode, arrow-right deselects the selected element.
-3. Rightclicking on your Programming Board -> Advanced -> Edit LUA parameters allows you to change several values:
-* [Optional] If you enable UseMyElementNames the display on the screens will not label damaged/broken elements by their type but by the name you gave them (truncated to 25 characters). Please note you can also click on the "Element Type" label on any connected screen to switch the mode.
-* [Optional] You can change the update interval in which the damage data of your ship will be scanned and processed. By default, this is 1 second. Please note that your screens will only refresh if your data changed.
-* [Optional] You can change the blinking frequency of a highlighted element.
-* [Optional] You can check "SimulationMode" to start the Programming Board in Simulation Mode by default (see 3.)
-* [Optional] If you enter your shipname into the variable "YourShipName" the display uses this name instead of the ship id at the top. Don't forget the quotation marks, otherwise it will not work (and you will have to reinstall the script).
-4. The script can either display the current damage data of your ship, or it can simulate random damage to your elements, should you want to test the views. No, your elements won't take any harm in the process. :)
+Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail.
+
+**Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
+
+The bottom row shows several modes you can switch the screen into:
+
+1. TIME - Will display the time on this screen as long as the script runs.
+
+2. DMG - This mode displays the damaged and broken elements of your ship (should there be any). Clicking on the Scrap-Tier in the header switches through Scrap-Tiers 1 to 4 to calculate your repair time and amount of specific scraps needed. (Please set your skills in the Settings, or it will not show correct data.)
+
+3. DMGO - This will draw a ship outline based on the position of the elements of your ship. You can switch the screen into top, side or front views.
+
+4. FUEL - This will show the fuel tank situation on your ship. (Please set your skills in the Settings, or it will not show correct data.)
+
+On the right side, there#s two additional buttons:
+
+5. SETS - This is the settings page of the script. Via touchscreen you are able to change all colors and the background as well as background opacity (left side), and set all required skills (on the right side). Please note that any line item marked as "Skill" requires you to enter your own level of that type, while "Stat" requires you to enter the level of the specific item that has been placed on your ship, specifically atmospheric, space and rocket fuel tank levels. - Lastly, you can also activate "Simulate Damage to Elements" so the script assumes certain damage on your ship's elements. That way you can look at all the displays and the HUD how they look like when your ship took damage without having to crash your ship. - Please note that all settings you change will be saved in the databank.
+
+5. HUD - This activates the HUD mode. The HUD mode is an overlay on your UI displaying certain damage data. The HUD mode is not connected to any of the 4 main modes (1. to 4.) but is always the same. While using the HUD you will also see certain buttons you can use to control the script:
+
+* Left arrow will toggle the HUD display (that's the same than you clicking the HUD-button on a screen).
+* Up/down arrows will select a damaged/broken element from your list (should you have broken elements). Selected elements will be highlighted in 3D space with arrows, so you can easier find them.
+* Right arrow will deselect the selected element.
+* CTRL + arrows will move the HUD on your screen so you can place it whereever you want.
+* ALT+8 will reset the HUD back to it's original position.
+* ALT+1, ALT+2, ALT+3, and ALT+4 will select the corresponding scrap tier level for the repair time and needed scrap calculations.
+* ALT+9 will shutdown the script. This is useful if e.g. you still had your script running because you repaired the ship and then want to move away. It's always better to manually shut it off than simply running out of range (as the screens will be cleared).
+
+In general: just play around with the script a bit, you'll get the hang of it quickly.
 
 ### Roadmap
 
-Currently the following additions are on the roadmap (unordered list):
-
-1. Add filters, so it's possible to monitor only specific element categories (flight systems, combat systems, etc.)
-2. Implement 3D to 2D projection, so damaged elements can be seen in the HUD mode as if you were using an ESP
-3. Beef up visuals and offer some visual options
+There's plenty of bullet points on the roadmap, but as of now I am only focusing on optimizing the code, so you will run into less CPU shutdown issues and/or will be able to run more screens in parallel. So, I am working on integrating coroutines.
 
 ### Known Issues
 
-1. HUD-mode will not work if you didn't activate the script at the Programming Board. If you activate it via a switch, a detection zone or similar, DU prevents the script from accessing the HUD. You need to start the script at the Programming Board if you want to use the HUD.
+1. You will run into script shutdowns due to the CPU usage. Use less screens to have a higher chance of not running into this problem. Optimizations are being worked on, but you can only go so far with the limited processing time we get.
 
+2. The Settings Page is very crowded (and therefore leads to script shutdowns more likely than other pages). Expect a fix for that soon.
+
+3. More time & date formats are coming soon.
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
