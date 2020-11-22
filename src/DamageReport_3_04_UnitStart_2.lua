@@ -34,6 +34,7 @@ SkillRepairToolOptimization = 0 --export Enter your talent "Mining and Inventory
 StatAtmosphericFuelTankHandling = 0 --export (0-5) Enter the LEVEL OF YOUR PLACED ATMOSPHERIC FUEL TANKS (from the builders talent "Piloting -> Atmospheric Flight Technician -> Atmospheric Fuel-Tank Handling")
 StatSpaceFuelTankHandling = 0 --export (0-5) Enter the LEVEL OF YOUR PLACED FUEL SPACE TANKS (from the builders talent "Piloting -> Atmospheric Engine Technician -> Space Fuel-Tank Handling")
 StatRocketFuelTankHandling = 0 --export (0-5) Enter the LEVEL OF YOUR PLACED FUEL ROCKET TANKS (from the builders talent "Piloting -> Rocket Scientist -> Rocket Booster Fuel Tank Handling")
+StatContainerOptimization = 0 --export (0-5) Enter the LEVEL OF YOUR PLACED FUEL TANKS "from the builders talent Mining and Inventory -> Stock Control -> Container Optimization"
 StatFuelTankOptimization = 0 --export (0-5) Enter the LEVEL OF YOUR PLACED FUEL TANKS "from the builders talent Mining and Inventory -> Stock Control -> Fuel Tank Optimization"
 
 ShowWelcomeMessage = true --export Do you want the welcome message on the start screen with your name?
@@ -359,8 +360,16 @@ function UpdateTypeData()
     local weightSpaceFuel = 6
     local weightRocketFuel = 0.8
 
-    -- (FuelMass * (1-.05 * <Container Optimization Talent Level>) * (1-.05 * <Fuel Tank Optimization Talent Level>)
+    --[[
+    (FuelMass * (1-.05 * <Container Optimization Talent Level>) * (1-.05 * <Fuel Tank Optimization Talent Level>)
+    It just seems to be that the Container Optimization and Fuel Tank Optimization are not added together so the max is not -50% (25% from each skill from the base mass) but 43.75% So the Fuel Tank Optimization uses the container optimization result as it's base value
+    ]]
 
+    if StatContainerOptimization > 0 then
+        weightAtmosphericFuel = weightAtmosphericFuel - 0.05 * StatContainerOptimization * weightAtmosphericFuel
+        weightSpaceFuel = weightSpaceFuel - 0.05 * StatContainerOptimization * weightSpaceFuel
+        weightRocketFuel = weightRocketFuel - 0.05 * StatContainerOptimization * weightRocketFuel
+    end
     if StatFuelTankOptimization > 0 then
         weightAtmosphericFuel = weightAtmosphericFuel - 0.05 * StatFuelTankOptimization * weightAtmosphericFuel
         weightSpaceFuel = weightSpaceFuel - 0.05 * StatFuelTankOptimization * weightSpaceFuel
@@ -403,9 +412,6 @@ function UpdateTypeData()
             if StatAtmosphericFuelTankHandling > 0 then
                 baseVol = 0.2 * StatAtmosphericFuelTankHandling * baseVol + baseVol
             end
-            if StatFuelTankOptimization > 0 then
-                baseMass = baseMass - 0.05 * StatFuelTankOptimization * baseMass
-            end
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
             cVol = string.format("%.0f", cMass / weightAtmosphericFuel)
@@ -443,9 +449,6 @@ function UpdateTypeData()
             end
             if StatSpaceFuelTankHandling > 0 then
                 baseVol = 0.2 * StatSpaceFuelTankHandling * baseVol + baseVol
-            end
-            if StatFuelTankOptimization > 0 then
-                baseMass = baseMass - 0.05 * StatFuelTankOptimization * baseMass
             end
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
@@ -488,9 +491,6 @@ function UpdateTypeData()
             end
             if StatRocketFuelTankHandling > 0 then
                 baseVol = 0.2 * StatRocketFuelTankHandling * baseVol + baseVol
-            end
-            if StatFuelTankOptimization > 0 then
-                baseMass = baseMass - 0.05 * StatFuelTankOptimization * baseMass
             end
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
@@ -2017,14 +2017,14 @@ if YourShipsName == "Enter here" then
     table.insert(Warnings, "No ship name set in LUA settings.")
 end
 
-if SkillRepairToolEfficiency == 0 and SkillRepairToolOptimization == 0 and StatFuelTankOptimization == 0 and 
+if SkillRepairToolEfficiency == 0 and SkillRepairToolOptimization == 0 and StatFuelTankOptimization == 0 and StatContainerOptimization ==0 and 
     StatAtmosphericFuelTankHandling == 0 and StatSpaceFuelTankHandling == 0 and StatRocketFuelTankHandling ==0 then
     table.insert(Warnings, "No talents/stats set in LUA settings.")
 end
 
-if SkillRepairToolEfficiency < 0 or SkillRepairToolOptimization < 0 or StatFuelTankOptimization < 0 or 
+if SkillRepairToolEfficiency < 0 or SkillRepairToolOptimization < 0 or StatFuelTankOptimization < 0 or StatContainerOptimization < 0 or 
     StatAtmosphericFuelTankHandling < 0 or StatSpaceFuelTankHandling < 0 or StatRocketFuelTankHandling < 0 or 
-    SkillRepairToolEfficiency > 5 or SkillRepairToolOptimization > 5 or StatFuelTankOptimization > 5 or 
+    SkillRepairToolEfficiency > 5 or SkillRepairToolOptimization > 5 or StatFuelTankOptimization > 5 or StatContainerOptimization > 5 or
     StatAtmosphericFuelTankHandling > 5 or StatSpaceFuelTankHandling > 5 or StatRocketFuelTankHandling > 5 then
         PrintConsole("ERROR: Talents/stats can only range from 0 to 5. Please set correctly in LUA settings and reactivate script.")
         unit.exit()
