@@ -1,7 +1,7 @@
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
-# Damage Report v3.01 (DU-DamageReport)
+# Damage Report v3.02 (DU-DamageReport)
 
 ### A multi-screen (and HUD) capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
 
@@ -86,6 +86,6 @@ There's plenty of bullet points on the roadmap, but as of now I am only focusing
 
 3. More time & date formats are coming soon.
 
-4. Your touchscreen is not working? - It probably does, you just most probably linked the elements in a wrong order. As in the installation: 1. Programming Board to Core, 2. Programming Board to Databank, 3. Programming Board to Screen, 4. Paste conf into Programming Board.
+4. Your touchscreen is not working? - First make sure you are not holding a tool in your hand when trying to click (don't laugh, it happened to all of us). If that is not the problem, you most probably linked the elements in a wrong order. As in the installation: 1. Programming Board to Core, 2. Programming Board to Databank, 3. Programming Board to Screen, 4. Paste conf into Programming Board.
 
 *GNU Public License 3.0. Use whatever you want, be so kind to leave credit.*
