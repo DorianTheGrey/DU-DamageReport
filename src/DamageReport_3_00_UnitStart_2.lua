@@ -2,7 +2,7 @@
     Damage Report 3.0
     A LUA script for Dual Universe
 
-    Created By Dorian Gray
+    Created By Dorian GrayY.percent
     Ingame: DorianGray
     Discord: Dorian Gray#2623
 
@@ -397,7 +397,7 @@ function UpdateTypeData()
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
             cVol = string.format("%.0f", cMass / weightAtmosphericFuel)
-            cPercent = string.format("%.1f", math.floor(100/baseVol * cVol))
+            cPercent = string.format("%.1f", math.floor(100/baseVol * tonumber(cVol)))
             table.insert(FuelAtmosphericTanks, {
                 type = 1,
                 id = id,
@@ -435,7 +435,7 @@ function UpdateTypeData()
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
             cVol = string.format("%.0f", cMass / weightSpaceFuel)
-            cPercent = string.format("%.1f", (100/baseVol * cVol))
+            cPercent = string.format("%.1f", (100/baseVol * tonumber(cVol)))
             table.insert(FuelSpaceTanks, {
                 type = 2,
                 id = id,
@@ -477,7 +477,7 @@ function UpdateTypeData()
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
             cVol = string.format("%.0f", cMass / weightRocketFuel)
-            cPercent = string.format("%.1f", (100/baseVol * cVol))
+            cPercent = string.format("%.1f", (100/baseVol * tonumber(cVol)))
             table.insert(FuelRocketTanks, {
                 type = 3,
                 id = id,
@@ -1458,7 +1458,7 @@ function GetContentFuel(screen)
             output = output .. [[
                 <svg x=20 y=]]..(cCounter*100+220)..[[ width=1880 height=100 viewBox="0 0 1880 100">
                     <rect class="fuel]]..colorChar..[[3" x="13.5" y="9.5" width="1853" height="81"/>
-                    <rect class="fuel]]..colorChar..[[4" x="13.5" y="9.5" width="]]..math.floor(1853/100*tank.percent)..[[" height="81"/>
+                    <rect class="fuel]]..colorChar..[[4" x="13.5" y="9.5" width="]]..math.floor(1853/100*tonumber(tank.percent))..[[" height="81"/>
                     <rect class="fuel]]..colorChar..[[2" x="13.5" y="9.5" width="1853" height="81"/>]]
             if tank.hp == 0 then
                 output = output .. [[<polygon class="cc" points="7 3 7 97 15 97 15 100 4 100 4 74.9 0 71.32 0 18.7 4 14.4 4 0 15 0 15 3 7 3"/><polygon class="cc" points="1873 3 1873 97 1865 97 1865 100 1876 100 1876 74.9 1880 71.32 1880 18.7 1876 14.4 1876 0 1865 0 1865 3 1873 3"/>]]
