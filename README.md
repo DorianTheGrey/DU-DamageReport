@@ -47,7 +47,7 @@ Having said all of this, I successfully used the script on a 1100 element L core
 
 Very soon we will be linking a YouTube video here explaning the installation and usage of the script in detail.
 
-**Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat.** (The script will work, you will just not be able to use the HUD-mode.)
+Activate the script at the Programming Board, not through a detection zone or a switch. DU prevents HUDs to be drawn to players that haven't activated a script through either a Programming Board or a Control Seat. (The script will work, you will just not be able to use the HUD-mode.) Also, please rememeber to set your talents correctly in the "Edit LUA Parameters" (Rightclick Programming Board -> Advanced -> Edit LUA Parameters). Also check "DisallowKeyPresses" if you want Damage Report to process any keypresses. This will limit the usability of your HUD mode significantly, but if you prever to use the keys for other scripts, this is a solution. (You can always toggle it back on if you have a bigger repair task ahead of you.)
 
 The bottom row shows several modes you can switch the screen into:
 
