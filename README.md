@@ -53,7 +53,7 @@ The bottom row shows several modes you can switch the screen into:
 
 1. TIME - Will display the time on this screen as long as the script runs.
 
-2. DMG - This mode displays the damaged and broken elements of your ship (should there be any). Clicking on the Scrap-Tier in the header switches through Scrap-Tiers 1 to 4 to calculate your repair time and amount of specific scraps needed. (Please set your skills in the Settings, or it will not show correct data.)
+2. DMG - This mode displays the damaged and broken elements of your ship (should there be any). Clicking on the Scrap-Tier in the header switches through Scrap-Tiers 1 to 4 to calculate your repair time and amount of specific scraps needed. (Please set your skills in the Settings, or it will not show correct data.) Clicking on "Damage Name" or "Broken Name" will turn the display to use element types instead of names, should you prefer that. Clicking on "Damage Type" or "Broken Type" will then turn the display back again to use names instead.
 
 3. DMGO - This will draw a ship outline based on the position of the elements of your ship. You can switch the screen into top, side or front views.
 
