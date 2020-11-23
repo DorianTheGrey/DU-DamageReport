@@ -41,7 +41,7 @@ Having said all of this, I successfully used the script on a 1100 element L core
 6. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard.
 7. Activate Programming Board.
 8. Rightclick on your programming board -> advanced -> edit lua parameters. Here you can enter the name of your ship. **Do not remove the quotation marks.**
-9. Still in the Edit Lua Parameters (see 8.), please set your talents according to the name/description of the talents. You see the description if you hover with your mouse over the name. Please note that any line item marked as "Skill" requires you to enter your own level of that type, while "Stat" requires you to enter the level of the specific item that has been placed on your ship (either by you or the builder). **If you do not set up your skills or don't set them up correctly, the fuel mode will not show you correct data, likewise the scrap calculations will not be correct.**
+9. Still in the Edit Lua Parameters (see 8.), please set your talents according to the name/description of the talents. You see the description if you hover with your mouse over the name. Please note that any line item marked as "Skill" requires you to enter your own level of that type, while "Stat" requires you to enter the level of the specific item that has been placed on your ship (either by you or the builder). **If you do not set up your talents/stats or don't set them up correctly, the fuel mode will not show you correct data, likewise the scrap calculations will not be correct.**
 
 ### Usage
 
