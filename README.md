@@ -41,6 +41,7 @@ Having said all of this, I successfully used the script on a 1100 element L core
 6. Rightclick on your Programming Board -> Advanced -> Paste LUA configuation from clipboard.
 7. Activate Programming Board.
 8. Rightclick on your programming board -> advanced -> edit lua parameters. Here you can enter the name of your ship. **Do not remove the quotation marks.**
+9. Still in the Edit Lua Parameters (see 8.), please set your talents according to the name/description of the talents. You see the description if you hover with your mouse over the name. Please note that any line item marked as "Skill" requires you to enter your own level of that type, while "Stat" requires you to enter the level of the specific item that has been placed on your ship (either by you or the builder). **If you do not set up your skills or don't set them up correctly, the fuel mode will not show you correct data, likewise the scrap calculations will not be correct.**
 
 ### Usage
 
@@ -60,7 +61,7 @@ The bottom row shows several modes you can switch the screen into:
 
 On the right side, there's two additional buttons:
 
-5. SETS - This is the settings page of the script. Via touchscreen you are able to change all colors and the background as well as background opacity (left side), and set all required skills (on the right side). Please note that any line item marked as "Skill" requires you to enter your own level of that type, while "Stat" requires you to enter the level of the specific item that has been placed on your ship, specifically atmospheric, space and rocket fuel tank levels. - Lastly, you can also activate "Simulate Damage to Elements" so the script assumes certain damage on your ship's elements. That way you can look at all the displays and the HUD how they look like when your ship took damage without having to crash your ship. - Please note that all settings you change will be saved in the databank.
+5. SETS - This is the settings page of the script. Via touchscreen you are able to change all colors and the background as well as background opacity (left side). Lastly, you can also activate "Simulate Damage to Elements" so the script assumes certain damage on your ship's elements. That way you can look at all the displays and the HUD how they look like when your ship took damage without having to crash your ship. - Please note that all settings you change will be saved in the databank.
 
 6. HUD - This activates the HUD mode. The HUD mode is an overlay on your UI displaying certain damage data. The HUD mode is not connected to any of the 4 main modes (1. to 4.) but is always the same. While using the HUD you will also see certain buttons you can use to control the script:
 
