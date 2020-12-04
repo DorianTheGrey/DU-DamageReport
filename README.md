@@ -1,4 +1,6 @@
-### This script is no longer supported as I am not agreeing to the way NovaQuark (the developer/publisher of Dual Universe) is handling their customer support as well as their communication to their community. I leave the script for others to download, use, alter - but please do not contact me for support any longer. I uninstalled the game and will not return.
+### This script is no longer supported as I am not agreeing at all to the way NovaQuark (the developer/publisher of Dual Universe) is handling their customer support as well as their communication towards their community. I uninstalled the game and will not return.
+
+### I leave the script for others to download, use, alter (under GNU Public License 3.0). Please do not contact me for support.
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
