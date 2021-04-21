@@ -1,7 +1,5 @@
 ### Returned to the project after some time gone. Please allow me some days to get back into LUA and update the script. :)
 
-### I leave the script for others to download, use, alter (under GNU Public License 3.0). Please do not contact me for support.
-
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
 # Damage Report v3.13 (DU-DamageReport)
