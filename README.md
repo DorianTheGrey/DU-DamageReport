@@ -1,6 +1,6 @@
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
-# Damage Report v3.2 (DU-DamageReport)
+# Damage Report v3.31 (DU-DamageReport)
 
 ### A multi-screen (and HUD) capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
 
