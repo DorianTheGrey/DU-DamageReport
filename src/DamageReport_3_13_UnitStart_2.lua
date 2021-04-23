@@ -362,11 +362,6 @@ function UpdateTypeData()
     local weightSpaceFuel = 6
     local weightRocketFuel = 0.8
 
-    --[[
-    (FuelMass * (1-.05 * <Container Optimization Talent Level>) * (1-.05 * <Fuel Tank Optimization Talent Level>)
-    It just seems to be that the Container Optimization and Fuel Tank Optimization are not added together so the max is not -50% (25% from each skill from the base mass) but 43.75% So the Fuel Tank Optimization uses the container optimization result as it's base value
-    ]]
-
     if StatContainerOptimization > 0 then
         weightAtmosphericFuel = weightAtmosphericFuel - 0.05 * StatContainerOptimization * weightAtmosphericFuel
         weightSpaceFuel = weightSpaceFuel - 0.05 * StatContainerOptimization * weightSpaceFuel
@@ -381,7 +376,6 @@ function UpdateTypeData()
     for i, id in ipairs(typeElements) do
         local idName = core.getElementNameById(id) or ""
         local idType = core.getElementTypeById(id) or ""
-        -- local idTypeClean = idType:gsub("[%s%-]+", ""):lower()
         local idPos = core.getElementPositionById(id) or 0
         local idHP = core.getElementHitPointsById(id) or 0
         local idMaxHP = core.getElementMaxHitPointsById(id) or 0
@@ -393,7 +387,7 @@ function UpdateTypeData()
         local cMass = 0
         local cVol = 0
 
-        if idType == "atmospheric fuel-tank" then
+        if idType == "Atmospheric Fuel Tank" then
             if idMaxHP > 10000 then 
                 baseSize = "L"
                 baseMass = 5480
@@ -435,7 +429,7 @@ function UpdateTypeData()
                 FuelAtmosphericCurrent = FuelAtmosphericCurrent + cVol
             end
             FuelAtmosphericTotal = FuelAtmosphericTotal + baseVol
-        elseif idType == "space fuel-tank" then
+        elseif idType == "Space Fuel Tank" then
             if idMaxHP > 10000 then
                 baseSize = "L"
                 baseMass = 5480
@@ -473,7 +467,7 @@ function UpdateTypeData()
                 FuelSpaceCurrent = FuelSpaceCurrent + cVol
             end
             FuelSpaceTotal = FuelSpaceTotal + baseVol
-        elseif idType == "rocket fuel-tank" then
+        elseif idType == "Rocket Fuel Tank" then
             if idMaxHP > 65000 then 
                 baseSize = "L"
                 baseMass = 25740
@@ -492,7 +486,7 @@ function UpdateTypeData()
                 baseVol = 400
             end
             if StatRocketFuelTankHandling > 0 then
-                baseVol = 0.2 * StatRocketFuelTankHandling * baseVol + baseVol
+                baseVol = 0.1 * StatRocketFuelTankHandling * baseVol + baseVol
             end
             cMass = idMass - baseMass
             if cMass <=10 then cMass = 0 end
@@ -564,11 +558,9 @@ function UpdateDamageData(initial)
         local idName = core.getElementNameById(id)
 
         local idType = core.getElementTypeById(id)
-        -- local idTypeClean = idType:gsub("[%s%-]+", ""):lower()
         local idPos = core.getElementPositionById(id)
         local idHP = core.getElementHitPointsById(id)
         local idMaxHP = core.getElementMaxHitPointsById(id)
-        -- local idMass = core.getElementMassById(id)
 
         if SimulationMode == true then
             SimulationActive = true
@@ -632,9 +624,9 @@ function UpdateDamageData(initial)
 
         if initial == true then
             if
-                idType == "atmospheric fuel-tank" or
-                idType == "space fuel-tank" or
-                idType == "rocket fuel-tank" 
+                idType == "Atmospheric Fuel Tank" or
+                idType == "Space Fuel Tank" or
+                idType == "Rocket Fuel Tank" 
             then
                table.insert(typeElements, id)
             end

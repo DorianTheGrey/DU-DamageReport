@@ -531,28 +531,10 @@ function UpdateDataDamageoutline()
     ShipY = math.abs(ShipYmax-ShipYmin)
     ShipZ = math.abs(ShipZmax-ShipZmin)
 
-    --[[
-    PrintConsole(
-            "ShipXmin: "..string.format("%.2f",ShipXmin)..
-            " - ShipYmin: "..string.format("%.2f",ShipYmin)..
-            " - ShipZmin: "..string.format("%.2f",ShipZmin)..
-            " - ShipXmax: "..string.format("%.2f",ShipXmax)..
-            " - ShipYmax: "..string.format("%.2f",ShipYmax)..
-            " - ShipZmax: "..string.format("%.2f",ShipZmax)
-            )
-
-    PrintConsole(
-            "ShipX: "..string.format("%.2f",ShipX)..
-            " - ShipY: "..string.format("%.2f",ShipY)..
-            " - ShipZ: "..string.format("%.2f",ShipZ)
-            )
-    ]]
-
-    for i,element in ipairs(dmgoElements) do
+     for i,element in ipairs(dmgoElements) do
         dmgoElements[i].xp = math.abs(100/(ShipXmax-ShipXmin)*(element.x-ShipXmin))
         dmgoElements[i].yp = math.abs(100/(ShipYmax-ShipYmin)*(element.y-ShipYmin))
         dmgoElements[i].zp = math.abs(100/(ShipZmax-ShipZmin)*(element.z-ShipZmin))
-        -- PrintConsole(i..". "..element.id..": "..string.format("%.2f",element.x).."/"..string.format("%.2f",element.y).."/"..string.format("%.2f",element.z).." - XP: "..dmgoElements[i].xp.." - YP: "..dmgoElements[i].yp.." - ZP: "..dmgoElements[i].zp)
     end
 
 end
