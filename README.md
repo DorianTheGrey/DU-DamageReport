@@ -76,6 +76,8 @@ In general: just play around with the script a bit, you'll get the hang of it qu
 
 There's plenty of bullet points on the roadmap, but as of now I am only focusing on optimizing the code, so you will run into less CPU shutdown issues and/or will be able to run more screens in parallel. So, I am working on integrating coroutines.
 
+3D projection system? :)
+
 ### Known Issues
 
 1. You will run into script shutdowns due to the CPU usage. Use less screens to have a higher chance of not running into this problem. Optimizations are being worked on, but you can only go so far with the limited processing time we get. If this is too much of a problem for you at the current stage, please use version 2.33 instead (in "versions").
