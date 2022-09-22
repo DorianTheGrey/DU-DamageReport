@@ -1,8 +1,6 @@
-![Standard View]
-
 (DEVELOPMENT ENDED)
 
-(https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
+![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
 # Damage Report v3.31 (DU-DamageReport)
 
