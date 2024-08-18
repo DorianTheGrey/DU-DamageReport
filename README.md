@@ -2,8 +2,8 @@
 
 ![Standard View](https://github.com/DorianTheGrey/DU-DamageReport/blob/main/img/DR_Logo1.png)
 
-# Damage Report v3.31 (DU-DamageReport)
-
+# Damage Report v3.32 (DU-DamageReport)
+(Fixed) some depreciated code
 ### A multi-screen (and HUD) capable, touch enabled, easy to install ship damage reporting script for **Dual Universe**.
 
 **Find that one damaged element faster. Have an eye on the elements of your ship which are hidden by honeycomb. Always know what has been damaged after hitting that tower due to lag near a marketplace. Know your fuel situation. Highlight damaged or broken elements in 3D space or find them in ship outline views. Customize all colors and background to fit your bridge colors and style.**
